@@ -49,12 +49,12 @@
       // My Domain Package
       import * as pkg from 'my-pkg/api.js';
 
-      // import { render as provider } from 'my-pkg/render.js';
-      // import <Container> from 'my-pkg/containers/<Container>.js';
+      import { render as provider } from 'my-pkg/render.js';
+      import TestContainer from 'my-pkg/containers/TestContainer.js';
 
       // Initialize GraphQl Client (Mesh)
       // Mesh Endpoint
-      mesh.setEndpoint(process.env.ENDPOINT);
+      mesh.setEndpoint('https://graph.adobe.io/api/63e62e43-8eb8-45a2-b0f6-f7c3845093db/graphql?api_key=2c6d06bb3aef463db8485c88a90f563f');
 
       // Initialize GraphQl Client (PKG)
       // pkg.setEndpoint(...);
@@ -108,7 +108,7 @@
       events.emit('authenticated', false);
 
       // Render Containers
-      // provider.render(<Container>)(document.getElementById('my-pkg'));
+      provider.render(TestContainer)(document.getElementById('my-pkg'));
     </script>
 
     <div id="app">
